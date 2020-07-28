@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | \      |   Q  |   W  |   E  |   R  |   T  | SYMB |           |  [   |   Y  |   U  |   I  |   O  |   P  |   ]    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | Tab    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |  '     |
- * |--------+------+------+------+------+------|TG_MIR|           | Magic|------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|MO_MIR|           | Magic|------+------+------+------+------+--------|
  * | LShf/( |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |  /   | RShf/) |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   | Alt  |  `  |  \   | Left | Right|                                       | Left | Down |   Up  | Right |Super|
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
-        KC_EQL,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_ESC,
+        KC_MINS,        KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_ESC,
         KC_BSLS,        KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   TG(SYMB),
         KC_TAB,         KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
         KC_LSPO,        KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,   MO(MIRROR),
@@ -48,11 +48,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                               KC_HOME,
                                                KC_BSPC,KC_SPC,KC_END,
         // right hand
-             OSL(UTIL),     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,    KC_MINS,
-             KC_LBRC,       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_RBRC,
+             OSL(UTIL),   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,     KC_EQL,
+             KC_LBRC,     KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,     KC_RBRC,
                           KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,  KC_QUOT,
              SMASH(KC_NO),KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,  KC_RSPC,
-                                  KC_LEFT,  KC_DOWN,KC_UP,KC_RGHT,  KC_RGUI,
+                                  KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,  KC_RGUI,
              KC_RALT,KC_RCTRL,
              KC_PGUP,
              KC_PGDN,KC_ENT, KC_SPC
@@ -80,9 +80,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   // If it accepts an argument (i.e, is a function), it doesn't need KC_.
   // Otherwise, it needs KC_*
-  [BASE] = LAYOUT_ergodox(  // layer 0 : default
+  [MIRROR] = LAYOUT_ergodox(  // layer 0 : default
           // left hand
-          KC_MINS,        KC_0,         KC_9,   KC_8,   KC_7,   KC_6,   KC_ESC,
+          KC_EQL,         KC_0,         KC_9,   KC_8,   KC_7,   KC_6,   KC_ESC,
           KC_LBRC,        KC_P,         KC_O,   KC_I,   KC_U,   KC_Y,   KC_RBRC,
           KC_QUOT,        KC_SCLN,      KC_L,   KC_K,   KC_J,   KC_H,
           KC_RSPC,        KC_SLSH,      KC_DOT, KC_COMM,KC_M,   KC_N,   _______,
@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          _______,KC_DOT,  KC_0,    KC_EQL,  _______,
        _______, _______,
        _______,
-       _______, _______, _______
+       _______, _______, KC_0
 ),
 /* Keymap 3: Util: Reset and change mac/win mode
  *
